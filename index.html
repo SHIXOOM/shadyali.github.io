@@ -4,769 +4,340 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shady Ali</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Charter:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-color: #fafafa;
-            --text-color: #000000;
-            --secondary-text: #444444;
-            --accent-color: #000000;
-            --light-gray: #f5f5f5;
-            --border-color: #eeeeee;
-            --surface-color: #ffffff;
-        }
-
-        body {
-            font-family: 'Charter', Georgia, serif;
-            background: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.7;
-            font-size: 18px;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        .container.large {
-            max-width: 1000px;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            background: var(--surface-color);
-            padding: 80px 0 60px;
-            margin-bottom: 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 200px 1fr 280px;
-            gap: 40px;
-            align-items: start;
-        }
-
-        /* Profile Column */
-        .profile-column {
-            text-align: center;
-        }
-
-        .profile-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--border-color);
-            margin: 0 auto 24px;
-        }
-
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            text-align: left;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 12px;
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 15px;
-            font-family: 'Poppins', sans-serif;
-            transition: all 0.2s;
-            border-radius: 4px;
-        }
-
-        .social-link:hover {
-            text-decoration: underline;
-        }
-
-        .social-link i {
-            width: 20px;
-            text-align: center;
-        }
-
-        /* About Column */
-        .about-column h1 {
-            font-size: clamp(32px, 5vw, 48px);
-            font-weight: 600;
-            margin-bottom: 8px;
-            letter-spacing: -0.02em;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .about-column .affiliation {
-            font-size: 16px;
-            color: var(--secondary-text);
-            margin-bottom: 4px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 400;
-        }
-
-        .about-column .subtitle {
-            font-size: 20px;
-            color: var(--secondary-text);
-            margin-bottom: 24px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .about-column p {
-            margin-bottom: 16px;
-            color: var(--text-color);
-        }
-
-        .stats-inline {
-            margin: 24px 0;
-            padding: 20px;
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .stats-inline strong {
-            color: var(--accent-color);
-            font-weight: 600;
-        }
-
-        .research-interests {
-            margin: 24px 0 32px;
-        }
-
-        .research-interests h4 {
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--secondary-text);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .research-interests .skill-tag {
-            padding: 4px 10px;
-            font-size: 13px;
-        }
-
-        /* Updates Column */
-        .updates-column h2 {
-            font-size: 18px;
-            margin-bottom: 16px;
-            font-weight: 600;
-        }
-
-        .update-item {
-            margin-bottom: 16px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .update-item:last-child {
-            border-bottom: none;
-        }
-
-        .update-date {
-            font-size: 12px;
-            color: var(--text-color);
-            font-weight: 600;
-            font-family: 'Poppins', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
-        }
-
-        .update-text {
-            font-size: 14px;
-            line-height: 1.5;
-            color: var(--secondary-text);
-        }
-
-        /* Main Content Sections */
-        section {
-            padding: 60px 0;
-        }
-
-        section h2 {
-            font-size: clamp(24px, 4vw, 32px);
-            font-weight: 600;
-            margin-bottom: 32px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        section h3 {
-            font-size: 22px;
-            font-weight: 600;
-            margin: 32px 0 16px;
-        }
-
-        /* Skills Section */
-        .skill-category {
-            margin-bottom: 24px;
-        }
-
-        .skill-category h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--secondary-text);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-tag {
-            padding: 6px 14px;
-            background: var(--light-gray);
-            border: 1px solid var(--border-color);
-            border-radius: 3px;
-            font-size: 14px;
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
-        }
-
-        /* Project Cards */
-        .project-card {
-            padding: 28px;
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            margin-bottom: 20px;
-        }
-
-        .project-card h3 {
-            font-size: 24px;
-            margin: 0 0 8px;
-        }
-
-        .project-meta {
-            font-size: 14px;
-            color: var(--accent-color);
-            margin-bottom: 16px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .project-card p {
-            margin-bottom: 16px;
-        }
-
-        .project-link {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-            font-family: 'Poppins', sans-serif;
-            font-size: 15px;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Publications */
-        .publication {
-            padding: 24px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .publication:last-child {
-            border-bottom: none;
-        }
-
-        .pub-title {
-            font-weight: 600;
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .pub-venue {
-            font-size: 15px;
-            color: var(--secondary-text);
-            margin-bottom: 8px;
-            font-style: italic;
-        }
-
-        /* Experience Section */
-        .experience-item {
-            padding: 24px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .experience-item:last-child {
-            border-bottom: none;
-        }
-
-        .exp-title {
-            font-weight: 600;
-            font-size: 18px;
-            margin-bottom: 4px;
-        }
-
-        .exp-company {
-            font-size: 16px;
-            font-weight: 500;
-            color: var(--text-color);
-            margin-bottom: 4px;
-        }
-
-        .exp-date {
-            font-size: 14px;
-            color: var(--secondary-text);
-            margin-bottom: 12px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .exp-desc {
-            color: var(--secondary-text);
-        }
-
-        .exp-desc ul {
-            list-style-position: outside;
-            padding-left: 20px;
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            font-size: 15px;
-            color: var(--secondary-text);
-        }
-
-        footer a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 10px 24px;
-            background: var(--accent-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
-            font-size: 15px;
-            transition: all 0.2s;
-        }
-
-        .btn:hover {
-            background: #333333;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .profile-column {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .social-links {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                max-width: 600px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 24px;
-            }
-
-            .hero-section {
-                padding: 60px 0 40px;
-            }
-
-            .about-column h1 {
-                font-size: 36px;
-            }
-
-            section {
-                padding: 40px 0;
-            }
-
-            section h2 {
-                font-size: 28px;
-            }
-        }
-    </style>
+    <meta name="description" content="Shady Ali works on interpretability, representation learning and LLM evaluation at Minnesota NLP, and as a Machine Learning Engineer at Cogmenta.">
+    <meta property="og:title" content="Shady Ali">
+    <meta property="og:description" content="Interpretability, representation learning and LLM evaluation. Papers, experience and CV.">
+    <meta property="og:image" content="https://shadyali.com/pp.JPG">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400&family=Geist:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Hero Section -->
-    <div class="hero-section">
-        <div class="container large">
-            <div class="hero-grid">
-                <!-- Profile Column -->
-                <div class="profile-column">
-                    <img src="pp.JPG" alt="Shady Ali" class="profile-image" />
-                    <div class="social-links">
-                        <a href="https://x.com/ShadyAlii0" class="social-link">
-                            <i class="fa-brands fa-twitter"></i>
-                            <span>X</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/shady-ali/" class="social-link">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://github.com/SHIXOOM" class="social-link">
-                            <i class="fa-brands fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://substack.com/@shadyali?" class="social-link">
-                            <i class="fa-solid fa-newspaper"></i>
-                            <span>Substack</span>
-                        </a>
-                        <a href="https://scholar.google.com/citations?user=VPRFJfoAAAAJ&hl=en&authuser=1" class="social-link">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                            <span>Google Scholar</span>
-                        </a>
-                        <a href="mailto:shadyali20004@gmail.com" class="social-link">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span>Email</span>
-                        </a>
-                    </div>
-                </div>
+    <header class="site-header">
+        <div class="container">
+            <a href="#top" class="wordmark">Shady Ali</a>
+            <nav class="site-nav" aria-label="Sections">
+                <ul>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li class="nav-optional"><a href="#projects">Projects</a></li>
+                    <li><a href="Shady_Ali_CV.pdf">CV</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-                <!-- About Column -->
-                <div class="about-column">
+    <main id="top">
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-intro">
+                    <figure class="portrait" data-slot="portrait" data-alt="Shady Ali">
+                        <img src="pp.JPG" alt="Shady Ali" width="591" height="591" fetchpriority="high">
+                    </figure>
                     <h1>Shady Ali</h1>
-                    <p class="affiliation">Computer Science, University of Minnesota - Twin Cities (Graduation: May 2026)</p>
-                    <p class="subtitle">Undergrad Researcher <a href="https://minnesotanlp.github.io/index.html#people">@Minnesota NLP</a></p>
+                    <p class="lead">I study what language models represent, and how we evaluate them.</p>
+                    <div class="actions">
+                        <a href="Shady_Ali_CV.pdf" class="btn btn--primary">Download CV</a>
+                        <a href="mailto:shadyali20004@gmail.com" class="btn btn--secondary">Email me</a>
+                    </div>
+                    <ul class="elsewhere" aria-label="Elsewhere">
+                        <li><a href="https://scholar.google.com/citations?user=VPRFJfoAAAAJ&hl=en&authuser=1">Google Scholar</a></li>
+                        <li><a href="https://github.com/SHIXOOM">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/shady-ali/">LinkedIn</a></li>
+                        <li><a href="https://x.com/ShadyAlii0">X</a></li>
+                        <li><a href="https://substack.com/@shadyali?">Substack</a></li>
+                    </ul>
+                </div>
 
-                    <p>Currently doing undergraduate research on Reasoning Trajectories, Knowledge Discovery, and Test-Time Scaling in Language Models at Minnesota NLP under the supervision of Professor <a href="https://dykang.github.io/index.html">Dongyeop Kang</a>.</p>
-                    <p>Open for any work opportunities for Summer 2026 and beyond.</p>
+                <div class="hero-papers">
+                    <div class="papers-head">
+                        <h2>Papers</h2>
+                        <p class="small muted">Also published as Shady Ali Said</p>
+                    </div>
+                    <ol class="papers">
+                        <li class="paper">
+                            <span class="year">2026</span>
+                            <div>
+                                <h3>Bringing Model Internals into Expert Annotation of Legal Reasoning</h3>
+                                <p class="status">Under review at ICLR 2027</p>
+                                <p class="authors"><strong>Shady Ali</strong>, Zae Myung Kim, Frank Schilder, Dongyeop Kang</p>
+                            </div>
+                        </li>
+                        <li class="paper">
+                            <span class="year">2026</span>
+                            <div>
+                                <h3>Who You Test Matters: Difficulty Alignment in LLM Benchmark Analysis</h3>
+                                <p class="status">Accepted as a poster at EvalEval, ACL 2026; not presented in person due to lack of travel funding</p>
+                                <p class="authors"><strong>Shady Ali</strong>, Dongyeop Kang</p>
+                            </div>
+                        </li>
+                        <li class="paper">
+                            <span class="year">2026</span>
+                            <div>
+                                <h3>A Concept-Informed Item Response Model for Fine-grained LLM Evaluation</h3>
+                                <p class="status">In preparation</p>
+                                <p class="authors"><strong>Shady Ali</strong>, Dongyeop Kang</p>
+                            </div>
+                        </li>
+                        <li class="paper">
+                            <span class="year">2025</span>
+                            <div>
+                                <h3><a href="https://arxiv.org/abs/2503.03239">PAIR: A Novel Large Language Model-Guided Selection Strategy for Evolutionary Algorithms</a></h3>
+                                <p class="status">Accepted at the International Journal of Computational Intelligence Systems (IJCIS), Springer</p>
+                                <p class="authors"><strong>Shady Ali</strong>, Mahmoud Ashraf, Seif Hegazy, Fatty Salem, Hoda Mokhtar, Mohamed Medhat Gaber, Mohamed Taher Alrefaie</p>
+                            </div>
+                        </li>
+                        <li class="paper">
+                            <span class="year">2025</span>
+                            <div>
+                                <h3><a href="https://link.springer.com/chapter/10.1007/978-981-96-6124-4_46">MotionCaution: Smartphone Application for Securing the Motions of Real-Time Vehicles</a></h3>
+                                <p class="status">Lecture Notes in Networks and Systems, vol. 1396, Springer</p>
+                                <p class="authors">Mohammed Abdalla, Hoda M. O. Mokhtar, <strong>Shady Ali Said</strong></p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
 
-                    <div class="research-interests">
-                        <h4>Research Interests</h4>
-                        <div class="skill-list">
-                            <span class="skill-tag">Representation Learning & Manifold Geometry</span>
-                            <span class="skill-tag">Reasoning LLMs & Agents</span>
-                            <span class="skill-tag">Reasoning Trajectories and Long-Horizon Planning/Execution</span>
-                            <span class="skill-tag">AI Systems</span>
+        <section class="section" id="about">
+            <div class="container about-grid">
+                <div class="letter">
+                    <h2>Hello, I’m Shady.</h2>
+                    <p>I work with Professor <a href="https://dykang.github.io/index.html">Dongyeop Kang</a> at <a href="https://minnesotanlp.github.io/index.html#people">Minnesota NLP</a> on interpretability and the evaluation of language models.</p>
+                    <p>I finished two bachelor’s degrees in 2026 through the EUI-UMN dual-degree program. I transferred to the University of Minnesota after my sophomore year and studied there full time in my senior year.</p>
+                    <p>Since September 2026 I have been a Machine Learning Engineer at <a href="https://cogmenta.tech">Cogmenta</a>, where I build the inference service and the connectors library behind the company’s products.</p>
+                </div>
+                <aside class="facts" aria-label="Education and honors">
+                    <h3>Education</h3>
+                    <dl>
+                        <dt>University of Minnesota Twin Cities</dt>
+                        <dd>B.S. in Computer Science, May 2026. GPA 3.968, High Distinction.</dd>
+                        <dt>Egypt University of Informatics</dt>
+                        <dd>B.S. in Computer and Information Sciences, July 2026. GPA 3.90, valedictorian.</dd>
+                    </dl>
+                    <h3>Scholarships</h3>
+                    <ul>
+                        <li>Full scholarship through the EUI-Microsoft partnership for UMN dual-degree study, 2024.</li>
+                        <li>Full scholarship through the EUI-Microsoft partnership for undergraduate study at EUI, 2022.</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section" id="research">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Research</h2>
+                    <p class="lead">Three threads at Minnesota NLP, all about what a model knows and how we measure it.</p>
+                </div>
+                <ul class="threads">
+                    <li class="thread">
+                        <h3>Concepts inside item response models</h3>
+                        <p>An additive item response model built on activation-derived semantic concepts. It improved response prediction and recovered MMLU-Pro model rankings using fewer questions than standard IRT or random selection, and traces predicted shifts in correctness to concepts and the tokens that activate them.</p>
+                        <p class="paper-ref">A Concept-Informed Item Response Model, in preparation</p>
+                    </li>
+                    <li class="thread">
+                        <h3>Model internals for legal experts</h3>
+                        <p>With Thomson Reuters, I proposed inspecting smaller surrogate models to bring activation descriptions into expert annotation of legal reasoning. Across three models, surrogacy was stronger within model families than across them. I coordinated the researchers and legal experts.</p>
+                        <p class="paper-ref">Bringing Model Internals, under review at ICLR 2027</p>
+                    </li>
+                    <li class="thread">
+                        <h3>Who you test matters</h3>
+                        <p>How the set of evaluated models changes conclusions about benchmark quality. I proposed the Capability Alignment Score (CAS), a Classical Test Theory-based information metric that was more stable with small model populations and selected smaller subsets that better preserved rankings.</p>
+                        <p class="paper-ref">Who You Test Matters, EvalEval at ACL 2026</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="experience">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Experience</h2>
+                    <p class="lead">Research, inference systems and data pipelines, from Cairo to Minneapolis.</p>
+                </div>
+                <ol class="jobs">
+                    <li class="job">
+                        <p class="when">Sep 2026 - Present<br>Minneapolis, MN</p>
+                        <div class="what">
+                            <h3>Machine Learning Engineer</h3>
+                            <p class="org"><a href="https://cogmenta.tech">Cogmenta Inc.</a></p>
+                            <ul>
+                                <li>Build the central inference service used by the company’s products and for internal development.</li>
+                                <li>Build a central connectors library that pulls data from outside services and providers into the company’s products.</li>
+                                <li>Work on a rotation across product design, systems architecture, and hardware.</li>
+                            </ul>
                         </div>
-                    </div>
-
-                    <p>I have research and industry experience in Machine Learning and Data Science. And a strong foundation in Computer Science and Software Engineering principles and understand and practice software development life cycle and architectural design.</p>
-                    
-                    <div class="stats-inline">
-                        <strong>GPA 4.0</strong> • <strong>2</strong> Research Papers • <strong>3</strong> Industry Experiences
-                    </div>
-
-                    <a href="https://drive.google.com/file/d/1hX72ZzHA1CHJeRtKrSibBtVt8y35ppDD/view?usp=sharing" class="btn">Download CV</a>
-                </div>
-
-                <!-- Updates Column -->
-                <div class="updates-column">
-                    <h2>Recent Updates</h2>
-
-                    <div class="update-item">
-                        <div class="update-date">Jan 2026</div>
-                        <div class="update-text">Started working at <a href="https://minnesotanlp.github.io">Minnesota NLP</a> as a Research Assistant.</div>
-                    </div>
-
-                    <div class="update-item">
-                        <div class="update-date">Oct 2025</div>
-                        <div class="update-text">Accepted as a lab member at <a href="https://minnesotanlp.github.io">Minnesota NLP</a>.</div>
-                    </div>
-
-                    <div class="update-item">
-                        <div class="update-date">Sep 2025</div>
-                        <div class="update-text">Started working part-time at UMN's AI Makerspace, doing fun projects and using some powerful GPUs!</div>
-                    </div>
-
-                    <div class="update-item">
-                        <div class="update-date">Sep 2025</div>
-                        <div class="update-text">Started an exciting journey of learning and applying Language Modeling and Word Vector representation from the very beginning, <a href="https://github.com/SHIXOOM/Language-Modeling-from-Scratch">check out the full repo! (on pause)</a></div>
-                    </div>
-
-                    <div class="update-item">
-                        <div class="update-date">May 2025</div>
-                        <div class="update-text"><a href="https://arxiv.org/abs/2503.03239"><i>PAIR: A Novel Large Language Model-Guided Selection Strategy for Evolutionary Algorithms</i></a> has been accepted at <b>Springer's International Journal of Computational Intelligence Systems.</b> (Faced issues with publication funding, under publication, again.)</div>
-                    </div>
-                </div>
+                    </li>
+                    <li class="job">
+                        <p class="when">Sep 2025 - Present<br>Minneapolis, MN</p>
+                        <div class="what">
+                            <h3>Research Assistant</h3>
+                            <p class="org"><a href="https://minnesotanlp.github.io">Minnesota NLP</a>, University of Minnesota. Advisor: Prof. Dongyeop Kang.</p>
+                            <ul>
+                                <li>Interpretability and LLM evaluation; the three threads are under Research above.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="job">
+                        <p class="when">Sep 2025 - May 2026<br>Minneapolis, MN</p>
+                        <div class="what">
+                            <h3>AI Technician Specialist</h3>
+                            <p class="org">AI Makerspace, University of Minnesota</p>
+                            <ul>
+                                <li>Deployed a slide-editing agent (NemoClaw, vLLM, quantized Qwen-3-Coder) on an NVIDIA DGX Spark for K-12 outreach, replacing a manual workflow to update 2,500+ legacy slides in four days.</li>
+                                <li>Supported AI Makerspace operations and AI/ML prototyping: guiding visitors through AI/ML tasks, building ML systems for the space and UMN, and creating AI workshops and guides for students.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="job">
+                        <p class="when">Apr 2025 - Jul 2025<br>Cairo, Egypt</p>
+                        <div class="what">
+                            <h3>Data Science Co-op</h3>
+                            <p class="org">SEIF Pharmacies</p>
+                            <ul>
+                                <li>Developed a data-oriented work scheduling and headcount report.</li>
+                                <li>Performed association analysis and clustering for a performance-scoring system to rank employees by hourly efficiency.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="job">
+                        <p class="when">Mar 2025 - Jun 2025<br>Cairo, Egypt</p>
+                        <div class="what">
+                            <h3>Intern Machine Learning Engineer</h3>
+                            <p class="org">Euclid Solutions</p>
+                            <ul>
+                                <li>Built a multithreaded Python, Pydantic, and Docker extraction pipeline for Workday (300K+ resumes) and Google Drive (20K+ files), using iterative LLM extraction and schema validation. Reduced turnaround from about two weeks to 3-4 days.</li>
+                                <li>Built a RAG pipeline using vLLM and PGVector/Postgres for candidate matching and outreach preparation; extended CrewAI’s web-scraping tool with parameter controls, merged upstream.</li>
+                                <li>Developed an autonomous RAG-powered agentic system that generates marketing campaign architectures from past campaign data, client-specific market analysis, and research insights.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="job">
+                        <p class="when">Aug 2024 - Nov 2024<br>Cairo, Egypt</p>
+                        <div class="what">
+                            <h3>Intern Data Scientist</h3>
+                            <p class="org">Attijariwafa Bank</p>
+                            <ul>
+                                <li>Built a customer-retention proof of concept combining K-means/GMM segmentation with XGBoost and LSTM churn models (scikit-learn, PyTorch).</li>
+                                <li>Extracted, cleaned, and engineered features from millions of customer records to build datasets for model training and testing.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Skills Section -->
-    <section>
+        <section class="band" id="updates" aria-labelledby="updates-title">
+            <div class="container updates-grid">
+                <h2 id="updates-title">Updates</h2>
+                <ul class="updates">
+                    <li><time datetime="2026-09">Sep 2026</time><span>Joined <a href="https://cogmenta.tech">Cogmenta</a> as a Machine Learning Engineer.</span></li>
+                    <li><time datetime="2026-07">Jul 2026</time><span>Finished at Egypt University of Informatics as valedictorian of the class of 2026.</span></li>
+                    <li><time datetime="2026-05">May 2026</time><span>Graduated from the University of Minnesota with High Distinction.</span></li>
+                    <li><time datetime="2026">2026</time><span><i>Who You Test Matters</i> accepted as a poster at the EvalEval workshop, ACL 2026.</span></li>
+                    <li><time datetime="2026-01">Jan 2026</time><span>Started working at <a href="https://minnesotanlp.github.io">Minnesota NLP</a> as a Research Assistant.</span></li>
+                    <li><time datetime="2025-10">Oct 2025</time><span>Accepted as a lab member at <a href="https://minnesotanlp.github.io">Minnesota NLP</a>.</span></li>
+                    <li><time datetime="2025-09">Sep 2025</time><span>Started working part-time at UMN’s AI Makerspace, doing fun projects and using some powerful GPUs.</span></li>
+                    <li><time datetime="2025-05">May 2025</time><span><a href="https://arxiv.org/abs/2503.03239"><i>PAIR</i></a> accepted at Springer’s International Journal of Computational Intelligence Systems.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Projects</h2>
+                    <p class="lead">Course projects and things built on the side. More on <a href="https://github.com/SHIXOOM">GitHub</a>.</p>
+                </div>
+                <table class="projects">
+                    <thead>
+                        <tr><th scope="col">Project</th><th scope="col">What it does</th><th scope="col">When</th><th scope="col">Code</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-name">Transferring a JEPA-based ECG Foundation Model to EEG</td>
+                            <td>Reproduced an ECG Joint Embedding Predictive Architecture (JEPA) and transferred it to EEG motor-imagery classification. Reached 29.7% balanced accuracy on BCIC-IV 2a versus LaBraM’s reported 28.5%, using about 480 hours of ECG pretraining versus 2,500 hours of EEG pretraining; fine-tuning datasets differed. Course project, CSCI 5527, team of two.</td>
+                            <td class="p-when">Apr 2026</td>
+                            <td class="p-link"></td>
+                        </tr>
+                        <tr>
+                            <td class="p-name">Self-Supervised Learning on ECG Signals via Dual-View Transformers</td>
+                            <td>Separate time and channel attention blocks connected by bidirectional cross-attention, trained with a self-supervised contrastive objective on 2x NVIDIA DGX Spark (GB10). Non-overlapping temporal partitioning beat noise-based augmentation. Course project, Machine Learning for Healthcare.</td>
+                            <td class="p-when">Nov 2025</td>
+                            <td class="p-link"><a href="https://github.com/SHIXOOM/Self-Supervised-Representation-Learning-on-ECG-Signals-via-Dual-View-Transformers">GitHub</a></td>
+                        </tr>
+                        <tr>
+                            <td class="p-name">Language Modeling from Scratch</td>
+                            <td>Word2Vec (Skip-Gram, Negative Sampling), Neural Probabilistic Language Models, and N-Grams, built from the ground up. On pause.</td>
+                            <td class="p-when">Sep 2025</td>
+                            <td class="p-link"><a href="https://github.com/SHIXOOM/Language-Modeling-from-Scratch">GitHub</a></td>
+                        </tr>
+                        <tr>
+                            <td class="p-name">Explicit Content Detection App</td>
+                            <td>A PyTorch image classifier based on MobileNetV3 with 96% accuracy on 12,000 images, and an Android app for content blocking.</td>
+                            <td class="p-when"></td>
+                            <td class="p-link"></td>
+                        </tr>
+                        <tr>
+                            <td class="p-name">Text Sentiment Analysis Model</td>
+                            <td>An LSTM network trained on 1 million texts from Twitter interactions and movie reviews with 87% accuracy, deployed as an API endpoint (TensorFlow, Keras, FastAPI).</td>
+                            <td class="p-when"></td>
+                            <td class="p-link"><a href="https://github.com/SHIXOOM/Sentiment-Analysis-LSTM-Model">GitHub</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section" id="tools">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Tools and courses</h2>
+                </div>
+                <dl class="kit">
+                    <div><dt>Methods</dt><dd>Item response modeling, sparse autoencoders, self-supervised learning, interpretability, LLM evaluation</dd></div>
+                    <div><dt>Languages</dt><dd>Python, C++, C, SQL, LaTeX</dd></div>
+                    <div><dt>ML and data</dt><dd>PyTorch, Transformers, vLLM, scikit-learn, XGBoost, TensorFlow, Pandas, NumPy, Matplotlib, Pydantic, CrewAI, LangGraph, LangChain</dd></div>
+                    <div><dt>Infrastructure</dt><dd>Docker, PostgreSQL, PGVector, AWS, Google Cloud, Git, Jupyter, Overleaf</dd></div>
+                    <div><dt>AI and ML courses</dt><dd>Introduction to Artificial Intelligence, Machine Learning Fundamentals, Deep Learning, Machine Learning in Healthcare, Emerging Topics in Large Language Models, Data Analysis, Directed Research</dd></div>
+                    <div><dt>Core CS and math</dt><dd>Data Structures, Algorithms Design and Analysis, Operating Systems, Computer Architecture and Organization, Architecture and Implementation of Database Systems, Principles of Database Systems, Software Analysis and Design, Functional Programming, Calculus I and II, Linear Algebra, Discrete Structures, Probability and Statistics, Graph Theory</dd></div>
+                </dl>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
         <div class="container">
-            <h2>Skills & Expertise</h2>
-            
-            <div class="skill-category">
-                <h4>Languages</h4>
-                <div class="skill-list">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">C</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">LaTeX</span>
-                </div>
+            <p class="closing">Write to me at <a href="mailto:shadyali20004@gmail.com">shadyali20004<wbr>@gmail.com</a></p>
+            <div class="footer-row">
+                <ul>
+                    <li><a href="Shady_Ali_CV.pdf">CV</a></li>
+                    <li><a href="https://scholar.google.com/citations?user=VPRFJfoAAAAJ&hl=en&authuser=1">Google Scholar</a></li>
+                    <li><a href="https://github.com/SHIXOOM">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/shady-ali/">LinkedIn</a></li>
+                    <li><a href="https://x.com/ShadyAlii0">X</a></li>
+                    <li><a href="https://substack.com/@shadyali?">Substack</a></li>
+                </ul>
+                <p>© 2026 Shady Ali</p>
             </div>
-
-            <div class="skill-category">
-                <h4>AI & Data Science</h4>
-                <div class="skill-list">
-                    <span class="skill-tag">PyTorch</span>
-                    <span class="skill-tag">Pandas</span>
-                    <span class="skill-tag">NumPy</span>
-                    <span class="skill-tag">vLLM</span>
-                    <span class="skill-tag">TensorFlow</span>
-                    <span class="skill-tag">Sklearn</span>
-                    <span class="skill-tag">CrewAI</span>
-                    <span class="skill-tag">LangGraph</span>
-                    <span class="skill-tag">LangChain</span>
-                    <span class="skill-tag">Matplotlib</span>
-                </div>
-            </div>
-
-            <div class="skill-category">
-                <h4>Developer Tools</h4>
-                <div class="skill-list">
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Jupyter</span>
-                    <span class="skill-tag">Google Cloud</span>
-                    <span class="skill-tag">Overleaf</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research & Publications Section -->
-    <section>
-        <div class="container">
-            <h2>Research & Publications</h2>
-            
-            <div class="publication">
-                <div class="pub-title">PAIR: A Novel Large Language Model-Guided Selection Strategy for Evolutionary Algorithms</div>
-                <div class="pub-venue">International Journal of Computational Intelligence Systems, Springer, 2025</div>
-                <a href="https://arxiv.org/abs/2503.03239" class="project-link">View publication →</a>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">MotionCaution: Smartphone Application for Securing the Motions of Real-Time Vehicles</div>
-                <div class="pub-venue">Lecture Notes on Networks and Systems, Springer, 2024</div>
-                <a href="https://link.springer.com/chapter/10.1007/978-981-96-6124-4_46" class="project-link">View publication →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Engineering Section -->
-    <section>
-        <div class="container">
-            <h2>Engineering & Work Experience</h2>
-
-            <div class="project-card">
-                <h3>Self-Supervised Learning on ECG Signals via Dual-View Transformers</h3>
-                <div class="project-meta">PyTorch • SSL • November 2025</div>
-                <p>Designed a custom architecture with separated Time and Channel attention blocks, connected via bi-directional cross-attention. Conducted comparative studies on augmentation strategies and adopted a self-supervised contrastive objective, trained on 2x Nvidia DGX Spark (GB10).</p>
-                <a href="https://github.com/SHIXOOM/Self-Supervised-Representation-Learning-on-ECG-Signals-via-Dual-View-Transformers" class="project-link">View project →</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Language Modeling from Scratch</h3>
-                <div class="project-meta">PyTorch • NLP • Deep Learning</div>
-                <p>Implemented Word2Vec (Skip-Gram, Negative Sampling), Neural Probabilistic Language Models, and N-Grams to build foundational language modeling concepts from the ground up.</p>
-                <a href="https://github.com/SHIXOOM/Language-Modeling-from-Scratch" class="project-link">View project →</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Agentic Marketing Campaign System</h3>
-                <div class="project-meta">RAG • LLMs • Autonomous Agents</div>
-                <p>Developed an autonomous RAG-powered Agentic system that generates marketing campaign architectures by integrating past campaign data, client-specific market analysis, and research insights.</p>
-            </div>
-
-            <div class="project-card">
-                <h3>LLM-Powered Resume Extraction Pipeline</h3>
-                <div class="project-meta">LLM • Multi-threading • Data Pipelines</div>
-                <p>Built an LLM-powered resume extraction pipeline using a multi-threaded producer-consumer architecture for efficient processing, aggregating multi-source candidate data into Google Sheets with structured insights.</p>
-            </div>
-
-            <div class="project-card">
-                <h3>Customer Retention & Churn Prediction</h3>
-                <div class="project-meta">Data Science • Machine Learning • FinTech</div>
-                <p>Led a customer retention project, delivering a proof of concept with clustering (K-Means, GMMs) and churn prediction models (XGBoost, LSTMs) for customer segmentation and retention insights.</p>
-            </div>
-
-            <div class="project-card">
-                <h3>Explicit Content Detection App</h3>
-                <div class="project-meta">PyTorch • Image Classification • Android</div>
-                <p>Developed a PyTorch-based image classifier based on MobileNetV3 with 96% accuracy on 12,000 images and created an Android app for content blocking.</p>
-            </div>
-
-            <div class="project-card">
-                <h3>Text Sentiment Analysis Model</h3>
-                <div class="project-meta">TensorFlow • Keras • NLP • FastAPI</div>
-                <p>Trained an LSTM Network on 1 million texts from Twitter interactions and movie reviews with 87% accuracy, and deployed it as an API endpoint.</p>
-                <a href="https://github.com/SHIXOOM/Sentiment-Analysis-LSTM-Model" class="project-link">View project →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section>
-        <div class="container">
-            <h2>Experience</h2>
-
-            <div class="experience-item">
-                <div class="exp-title">Undergraduate Researcher</div>
-                <div class="exp-company">Minnesota NLP, Minneapolis, MN</div>
-                <div class="exp-date">September 2025 - Present</div>
-                <div class="exp-desc">
-                    <ul>
-                        <li>Working on Test-Time and Inference Scaling, and Knowledge Discovery in Language Models.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="exp-title">AI Technician</div>
-                <div class="exp-company">University of Minnesota AI Makerspace, Minneapolis, MN</div>
-                <div class="exp-date">September 2025 - Present</div>
-                <div class="exp-desc">
-                    <ul>
-                        <li>Guiding visitors with AI/ML tasks, projects, and questions.</li>
-                        <li>Building Machine Learning systems for the space and UMN.</li>
-                        <li>Creating AI workshops and guides for students.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="exp-title">Data Science Co-op</div>
-                <div class="exp-company">SEIF Pharmacies, Cairo, Egypt</div>
-                <div class="exp-date">April 2025 - July 2025</div>
-                <div class="exp-desc">
-                    <ul>
-                        <li>Developed a data-oriented work scheduling and headcount report.</li>
-                        <li>Performed association analysis and clustering for a performance-scoring system to rank employees by hourly efficiency.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="exp-title">Junior Machine Learning Engineer</div>
-                <div class="exp-company">Euclid Solutions, Cairo, Egypt</div>
-                <div class="exp-date">March 2025 - June 2025</div>
-                <div class="exp-desc">
-                    <ul>
-                        <li>Developed an autonomous RAG-powered Agentic system that generates marketing campaign architectures by integrating past campaign data, client-specific market analysis, and research insights.</li>
-                        <li>Built an LLM-powered resume extraction pipeline using a multi-threaded producer–consumer architecture for efficient processing, aggregating multi-source candidate data into Google Sheets with structured insights.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="exp-title">Data Science Intern</div>
-                <div class="exp-company">Attijariwafa Bank, Cairo, Egypt</div>
-                <div class="exp-date">August 2024 - November 2024</div>
-                <div class="exp-desc">
-                    <ul>
-                        <li>Led a customer retention project, delivering a proof of concept with clustering (K-Means, GMMs) and churn prediction models (XGBoost, LSTMs) for customer segmentation and retention insights.</li>
-                        <li>Extracted, cleaned, and engineered features from millions of customer records to build robust datasets for model training and testing.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Coursework Section -->
-    <section>
-        <div class="container">
-            <h2>Relevant Coursework</h2>
-            <div class="skill-category">
-                <h4>AI & Machine Learning</h4>
-                <div class="skill-list">
-                    <span class="skill-tag">Introduction to Artificial Intelligence</span>
-                    <span class="skill-tag">Machine Learning Fundamentals</span>
-                    <span class="skill-tag">Directed Research</span>
-                    <span class="skill-tag">Machine Learning in Healthcare</span>
-                    <span class="skill-tag">Data Analysis</span>
-                    <span class="skill-tag">Deep Learning</span>
-                    <span class="skill-tag">Emerging Topics in Large Language Models</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h4>Core CS</h4>
-                <div class="skill-list">
-                    <span class="skill-tag">Data Structures</span>
-                    <span class="skill-tag">Algorithms Design and Analysis</span>
-                    <span class="skill-tag">Introduction to Operating Systems</span>
-                    <span class="skill-tag">Computer Architecture and Organization</span>
-                    <span class="skill-tag">Architecture and Implementation of Database Systems</span>
-                    <span class="skill-tag">Principles of Database Systems</span>
-                    <span class="skill-tag">Software Analysis and Design</span>
-                    <span class="skill-tag">Functional Programming</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h4>Math & Theory</h4>
-                <div class="skill-list">
-                    <span class="skill-tag">Calculus I & II</span>
-                    <span class="skill-tag">Linear Algebra</span>
-                    <span class="skill-tag">Discrete Structures</span>
-                    <span class="skill-tag">Introduction to Probability and Statistics</span>
-                    <span class="skill-tag">Graph Theory</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2026 Shady Ali. This website is built on the <a href="https://shikun.io/projects/clarity">Clarity</a> template.</p>
         </div>
     </footer>
 
+    <script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
+document.querySelectorAll('[data-slot] img').forEach((i) => { if (i.complete && !i.naturalWidth) i.remove(); else i.addEventListener('error', () => i.remove(), { once: true }); });</script>
     <script>
         // Smooth scrolling for anchor links
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth',
+                        behavior: reduceMotion ? 'auto' : 'smooth',
                         block: 'start'
                     });
                 }
